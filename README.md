@@ -25,10 +25,12 @@ streamlit run streamlit_app.py
 ![image](https://github.com/user-attachments/assets/ac149a6e-3fa3-474b-a28a-142a37fcc5d5)
 
 ## 演習
-1. 変数like_minに対しても、st.sidebar.number_inputによる入力ボックスとし、表示を"高評価数下限"、stepを"1000"とする
+1. タイトルで「YouTubeチャンネル分析」と表示されるようにコードを修正する
+
+2. 変数like_minに対しても、st.sidebar.number_inputによる入力ボックスとし、表示を"高評価数下限"、stepを"1000"とする
 ![image](https://github.com/user-attachments/assets/33d5fbb5-b2a0-4eb3-8cc7-55fc16aa9523)
 
-2. 棒グラフのx軸を"month"から"video_title"に変更する
+3. 棒グラフのx軸を"month"から"video_title"に変更する
 ![image](https://github.com/user-attachments/assets/481a1419-268a-4709-ad9e-a5454e73525b)
 
 ## Streamlitについて
