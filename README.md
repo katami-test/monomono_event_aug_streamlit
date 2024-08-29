@@ -26,6 +26,7 @@ streamlit run streamlit_app.py
 
 ## 演習
 1. タイトルで「YouTubeチャンネル分析」と表示されるようにコードを修正する
+![image](https://github.com/user-attachments/assets/75c69404-5878-4b64-b071-79af065d5ad1)
 
 2. 変数like_minに対しても、st.sidebar.number_inputによる入力ボックスとし、表示を"高評価数下限"、stepを"1000"とする
 ![image](https://github.com/user-attachments/assets/33d5fbb5-b2a0-4eb3-8cc7-55fc16aa9523)
