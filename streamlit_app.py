@@ -10,7 +10,7 @@ st.title("Youtubeチャンネル分析")
 st.write("データをアップロードして気になるチャンネルを分析してみましょう")
 
 #データをアップロード
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader('CSVをアップロード')
 if uploaded_file is not None:
     #アップロードしたCSVをデータフレームにする
     video_data = pd.read_csv(uploaded_file,encoding="Shift-JIS")
@@ -39,16 +39,17 @@ if uploaded_file is not None:
     chart_data = data[['Post_Date', 'month', 'Video_Title','Views','Likes','Comments']]
     st.bar_chart(chart_data, x="month", y=['Views','Likes']) #演習2
 
-    #matplotlibの表示（散布図）
+    # matplotlibの描画（散布図）
     fig1 = plt.figure()
     ax = fig1.add_subplot(111)
     ax.scatter(data['Views'], data['Likes'])
-    ax.set_xlabel('view_count')
-    ax.set_ylabel('likes_count')
+    ax.set_xlabel('view count')
+    ax.set_ylabel('likes count')
 
+    # matplotlibの描画をアプリに表示
     st.pyplot(fig1)
 
-    #テキスト分析
+    # テキスト分析
     title_text = ''.join(data['Video_Title'])
 
     docs=[]
@@ -62,11 +63,12 @@ if uploaded_file is not None:
     count_df = pd.DataFrame.from_dict(docs_count, orient='index').reset_index()
     count_df.columns = ['word', 'count']
 
+    # テキスト分析結果を表示
     st.subheader('タイトル頻出ワード')
     st.dataframe(count_df.sort_values(by='count', ascending=False).head(10),hide_index=True)
 
 
-    #一覧の表示
+    # 動画別データの一覧表示
     st.subheader('動画別のデータ')
     st.dataframe(data[['thumbnails','Video_Title','Views','Likes','Comments']],
         column_config={
