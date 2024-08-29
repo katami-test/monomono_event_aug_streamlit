@@ -1,7 +1,7 @@
 # ささっと手軽にアプリを作成！PythonとStreamlitでデータ分析ダッシュボード開発ハンズオン
 
 ## ハンズオン準備
-`YouTube_video_data.csv`をローカルにダウンロード
+`monomono_streamlit_testdata.csv`をローカルにダウンロード
 
 ## ハンズオン手順
 
