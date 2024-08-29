@@ -37,7 +37,7 @@ if uploaded_file is not None:
     #月別のグラフの表示
     st.subheader('月別の再生数')
     chart_data = data[['Post_Date', 'month', 'Video_Title','Views','Likes','Comments']]
-    st.bar_chart(chart_data, x='month', y=['Views','Likes']) #演習2
+    st.bar_chart(chart_data, x='month', y=['Views','Likes']) #★演習2
 
     # matplotlibの描画（散布図）
     fig1 = plt.figure()
