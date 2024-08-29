@@ -1,40 +1,39 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from janome.tokenizer import Tokenizer
 import matplotlib.pyplot as plt
 import collections
 
-#テキスト表示
+# テキスト表示
 st.title('Youtubeチャンネル分析')
 st.write('データをアップロードして気になるチャンネルを分析してみましょう')
 
-#データをアップロード
+# データをアップロード
 uploaded_file = st.file_uploader('CSVをアップロード')
 if uploaded_file is not None:
-    #アップロードしたCSVをデータフレームにする
+    # アップロードしたCSVをデータフレームにする
     video_data = pd.read_csv(uploaded_file,encoding='UTF-8')
     video_data['Post_Date'] = pd.to_datetime(video_data['Post_Date']).dt.date
     video_data['month'] = pd.to_datetime(video_data['Post_Date']).dt.to_period('M').dt.start_time
 
-    #サイドメニュー＆データのフィルターに使用する入力ボックス作成
+    # サイドメニュー＆データのフィルターに使用する入力ボックス作成
     st.sidebar.write('フィルター設定')
     date_start = st.sidebar.date_input('開始日',value=video_data['Post_Date'].min(), min_value=video_data['Post_Date'].min())
     date_end = st.sidebar.date_input('終了日')
     view_min = st.sidebar.number_input('再生数下限',step=10000)
     like_min = 0 #★演習1
 
-    #設定に合わせてデータをフィルター
+    # 設定に合わせてデータをフィルター
     data = video_data.query('@date_end >= Post_Date >= @date_start & Views > @view_min & Likes > @like_min')
 
-    #集計データの表示
+    # 集計データの表示
     st.subheader('動画の再生数')
     col1, col2, col3 = st.columns(3)
     col1.metric('最大', data['Views'].max())
     col2.metric('最小', data['Views'].min())
     col3.metric('平均', data['Views'].mean())
 
-    #月別のグラフの表示
+    # 月別のグラフの表示
     st.subheader('月別の再生数')
     chart_data = data[['Post_Date', 'month', 'Video_Title','Views','Likes','Comments']]
     st.bar_chart(chart_data, x='month', y=['Views','Likes']) #★演習2
