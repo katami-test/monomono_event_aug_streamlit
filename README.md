@@ -5,13 +5,14 @@
 
 ## ハンズオン手順
 
-1. ライブラリのインストール
+1. モジュールのインストール
 ```
 pip install streamlit janome
 ```
 
 2. コードを開く
-`streamlit_app.py`を使用
+
+`streamlit_app.py`を開く
 
 3. Streamlitの実行
 ```
@@ -20,26 +21,24 @@ streamlit run streamlit_app.py
 4. シンプルブラウザを開く
 ![image](https://github.com/user-attachments/assets/32e2be48-741f-41b4-b90e-2f294f0ebef7)
 
+5.シンプルブラウザを更新（変更の確認）
+![image](https://github.com/user-attachments/assets/ac149a6e-3fa3-474b-a28a-142a37fcc5d5)
+
 ## 演習
-1. 高評価数の下限値の入力ボックスを作成
+1. 変数like_minに対しても、st.sidebar.number_inputによる入力ボックスとし、表示を"高評価数下限"、stepを"1000"とする
 ![image](https://github.com/user-attachments/assets/33d5fbb5-b2a0-4eb3-8cc7-55fc16aa9523)
 
-2. 棒グラフ横軸をを月別⇒動画別に変更する
-![image](https://github.com/user-attachments/assets/e9d418bf-9313-4a3a-ab46-ddc8837a1875)
-
+2. 棒グラフのx軸を"month"から"video_title"に変更する
+![image](https://github.com/user-attachments/assets/481a1419-268a-4709-ad9e-a5454e73525b)
 
 ## Streamlitについて
 
-ドキュメント
-https://docs.streamlit.io/develop/api-reference
+[ドキュメント](https://docs.streamlit.io/develop/api-reference)
 
-Streamlit Community Cloudの認証について
-https://docs.streamlit.io/deploy/streamlit-community-cloud/status#why-does-streamlit-require-additional-oauth-scope
+[Streamlit Community Cloudの認証について](https://docs.streamlit.io/deploy/streamlit-community-cloud/status#why-does-streamlit-require-additional-oauth-scope)
 
 ## 本イベントについて
 
-イベント詳細
-https://jellyware.connpass.com/event/327150/
+[イベント詳細](https://jellyware.connpass.com/event/327150/)
 
-JellyWareホームページ
-https://jellyware.jp/
+[JellyWareホームページ](https://jellyware.jp/)
