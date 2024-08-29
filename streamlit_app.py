@@ -13,7 +13,7 @@ st.write('データをアップロードして気になるチャンネルを分�
 uploaded_file = st.file_uploader('CSVをアップロード')
 if uploaded_file is not None:
     #アップロードしたCSVをデータフレームにする
-    video_data = pd.read_csv(uploaded_file,encoding='Shift-JIS')
+    video_data = pd.read_csv(uploaded_file,encoding='UTF-8')
     video_data['Post_Date'] = pd.to_datetime(video_data['Post_Date']).dt.date
     video_data['month'] = pd.to_datetime(video_data['Post_Date']).dt.to_period('M').dt.start_time
 
